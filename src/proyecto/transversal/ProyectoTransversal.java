@@ -5,6 +5,9 @@
  */
 package proyecto.transversal;
 
+import java.sql.Connection;
+import proyecto.transversal.AccesoADatos.Conexion;
+
 /**
  *
  * @author Administrador
@@ -16,6 +19,8 @@ public class ProyectoTransversal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Connection con=Conexion.getConexion();
     }
     
 }
