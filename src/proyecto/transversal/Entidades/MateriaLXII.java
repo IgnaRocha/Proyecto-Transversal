@@ -9,23 +9,23 @@ package proyecto.transversal.Entidades;
  *
  * @author Kelly
  */
-public class Materia {
+public class MateriaLXII {
     private int idMateria;
     private String nombre;
     private int anio;
     private boolean estado;
 
-    public Materia() {
+    public MateriaLXII() {
     }
 
-    public Materia(int idMateria, String nombre, int anio, boolean estado) {
+    public MateriaLXII(int idMateria, String nombre, int anio, boolean estado) {
         this.idMateria = idMateria;
         this.nombre = nombre;
         this.anio = anio;
         this.estado = estado;
     }
 
-    public Materia(String nombre, int anio, boolean estado) {
+    public MateriaLXII(String nombre, int anio, boolean estado) {
         this.nombre = nombre;
         this.anio = anio;
         this.estado = estado;

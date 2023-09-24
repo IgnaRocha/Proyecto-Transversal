@@ -9,23 +9,23 @@ package proyecto.transversal.Entidades;
  *
  * @author Kelly
  */
-public class Inscripcion {
+public class InscripcionLXII {
     private int idInscripcion;
-    private Alumno alumno;
-    private Materia materia;
+    private AlumnoLXII alumno;
+    private MateriaLXII materia;
     private double nota;   
 
-    public Inscripcion() {
+    public InscripcionLXII() {
     }
 
-    public Inscripcion(int idInscripcion, Alumno alumno, Materia materia, double nota) {
+    public InscripcionLXII(int idInscripcion, AlumnoLXII alumno, MateriaLXII materia, double nota) {
         this.idInscripcion = idInscripcion;
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
     }
 
-    public Inscripcion(Alumno alumno, Materia materia, double nota) {
+    public InscripcionLXII(AlumnoLXII alumno, MateriaLXII materia, double nota) {
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
@@ -39,19 +39,19 @@ public class Inscripcion {
         this.idInscripcion = idInscripcion;
     }
 
-    public Alumno getAlumno() {
+    public AlumnoLXII getAlumno() {
         return alumno;
     }
 
-    public void setAlumno(Alumno alumno) {
+    public void setAlumno(AlumnoLXII alumno) {
         this.alumno = alumno;
     }
 
-    public Materia getMateria() {
+    public MateriaLXII getMateria() {
         return materia;
     }
 
-    public void setMateria(Materia materia) {
+    public void setMateria(MateriaLXII materia) {
         this.materia = materia;
     }
 

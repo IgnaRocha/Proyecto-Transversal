@@ -13,17 +13,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import proyecto.transversal.Entidades.Materia;
+import proyecto.transversal.Entidades.MateriaLXII;
 
 /**
  *
  * @author Agente Sosa
  */
-public class MateriaData {
+public class MateriaDataLXII {
     
      private Connection con = null;
 
-public Materia guardarMateria (Materia materia){
+public MateriaLXII guardarMateria (MateriaLXII materia){
     String sql= "INSERT INTO materia(idMateria, nombre, año, estado) VALUES (5, 'Matematica 1', 1, 1)";
     PreparedStatement ps = null;
     
@@ -54,8 +54,8 @@ public Materia guardarMateria (Materia materia){
             }
     
 
- public Materia buscarMateria(int id){
-    Materia materia = null;
+ public MateriaLXII buscarMateria(int id){
+    MateriaLXII materia = null;
         String sql= "SELECT idMateria, nombre, año, estado FROM materia WHERE 1";
         PreparedStatement ps = null;
         
@@ -65,7 +65,7 @@ public Materia guardarMateria (Materia materia){
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                materia = new Materia();
+                materia = new MateriaLXII();
                 materia.setIdMateria(id);
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnio(rs.getInt("anio"));
@@ -84,7 +84,7 @@ public Materia guardarMateria (Materia materia){
         }
         
      
-public void modificarMateria (Materia materia){
+public void modificarMateria (MateriaLXII materia){
         String sql = "UPDATE materia SET idMateria= ? ,nombre = ?, anio = ?, estado = ?  WHERE 1";
         PreparedStatement ps = null;
         
@@ -134,15 +134,15 @@ public void modificarMateria (Materia materia){
            List<AlumnoG62> alumnos = new ArrayList<>();
     */
    
-   public List<Materia> listarMaterias(){
-           List<Materia> areas = new ArrayList<>();
+   public List<MateriaLXII> listarMaterias(){
+           List<MateriaLXII> areas = new ArrayList<>();
            
            try{
                String sql = "SELECT idMateria, nombre, año, activo FROM materia WHERE 1";
                PreparedStatement ps = con.prepareStatement(sql);
                ResultSet rs = ps.executeQuery();
                while (rs.next()){
-                   Materia materia = new Materia();
+                   MateriaLXII materia = new MateriaLXII();
                    
                    materia.setIdMateria(rs.getInt("idMateria"));
                    materia.setNombre (rs.getString("nombre"));

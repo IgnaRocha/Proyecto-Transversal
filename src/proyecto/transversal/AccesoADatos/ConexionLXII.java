@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author ponce
  */
-public class Conexion {
+public class ConexionLXII {
     private static final String URL="jdbc:mariadb://localhost/";
     private static final String DB="universidadupl";
     private static final String USUARIO="root";
     private static final String PASSWORD="";
     private static Connection connection;
     
-    private Conexion (){}
+    private ConexionLXII (){}
     public static Connection getConexion(){
         
         if (connection == null) {
@@ -35,7 +35,7 @@ public class Conexion {
             } catch (ClassNotFoundException ex) {
                 JOptionPane.showMessageDialog(null, "Error al cargar los driver");
             } catch (SQLException ex) {
-                Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexionLXII.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
             }
         }

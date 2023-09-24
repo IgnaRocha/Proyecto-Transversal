@@ -6,7 +6,7 @@
 package proyecto.transversal;
 
 import java.sql.Connection;
-import proyecto.transversal.AccesoADatos.Conexion;
+import proyecto.transversal.AccesoADatos.ConexionLXII;
 
 /**
  *
@@ -19,7 +19,7 @@ public class ProyectoTransversal {
      */
     public static void main(String[] args) {
         
-        Connection con=Conexion.getConexion();
+        Connection con=ConexionLXII.getConexion();
         
     }
     
