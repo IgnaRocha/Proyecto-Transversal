@@ -10,7 +10,7 @@ package proyecto.transversal.Entidades;
  * @author Kelly
  */
 public class InscripcionLXII {
-    private int idInscripcion;
+    private int id_inscripcion;
     private AlumnoLXII alumno;
     private MateriaLXII materia;
     private double nota;   
@@ -18,8 +18,8 @@ public class InscripcionLXII {
     public InscripcionLXII() {
     }
 
-    public InscripcionLXII(int idInscripcion, AlumnoLXII alumno, MateriaLXII materia, double nota) {
-        this.idInscripcion = idInscripcion;
+    public InscripcionLXII(int id_inscripcion, AlumnoLXII alumno, MateriaLXII materia, double nota) {
+        this.id_inscripcion = id_inscripcion;
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
@@ -31,12 +31,12 @@ public class InscripcionLXII {
         this.nota = nota;
     }
 
-    public int getIdInscripcion() {
-        return idInscripcion;
+    public int getId_inscripcion() {
+        return id_inscripcion;
     }
 
-    public void setIdInscripcion(int idInscripcion) {
-        this.idInscripcion = idInscripcion;
+    public void setId_inscripcion(int id_inscripcion) {
+        this.id_inscripcion = id_inscripcion;
     }
 
     public AlumnoLXII getAlumno() {
@@ -65,7 +65,7 @@ public class InscripcionLXII {
 
     @Override
     public String toString() {
-    String inscripcion= idInscripcion + " " + alumno.getApellido()+ "," + alumno.getNombre()+ "," + materia.getNombre();
+    String inscripcion= id_inscripcion + " " + alumno.getApellido()+ "," + alumno.getNombre()+ "," + materia.getNombre();
     return inscripcion;
     }
     

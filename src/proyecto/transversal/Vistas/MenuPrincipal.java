@@ -11,9 +11,6 @@ package proyecto.transversal.Vistas;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
     public MenuPrincipal() {
         initComponents();
     }
@@ -29,16 +26,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMAlumno = new javax.swing.JMenu();
         FormAlum = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMMateria = new javax.swing.JMenu();
         FormMate = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        jMAdministracion = new javax.swing.JMenu();
         ManeInscri = new javax.swing.JMenuItem();
         ManeNota = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMConsultas = new javax.swing.JMenu();
         AlumxMate = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        jMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,10 +50,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 427, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Alumno");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        jMAlumno.setText("Alumno");
+        jMAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                jMAlumnoActionPerformed(evt);
             }
         });
 
@@ -66,11 +63,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 FormAlumActionPerformed(evt);
             }
         });
-        jMenu1.add(FormAlum);
+        jMAlumno.add(FormAlum);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMAlumno);
 
-        jMenu2.setText("Materia");
+        jMMateria.setText("Materia");
 
         FormMate.setText("Formulario de Materia");
         FormMate.addActionListener(new java.awt.event.ActionListener() {
@@ -78,11 +75,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 FormMateActionPerformed(evt);
             }
         });
-        jMenu2.add(FormMate);
+        jMMateria.add(FormMate);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMMateria);
 
-        jMenu3.setText("Administacion");
+        jMAdministracion.setText("Administacion");
 
         ManeInscri.setText("Manejo de Inscripciones");
         ManeInscri.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +87,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 ManeInscriActionPerformed(evt);
             }
         });
-        jMenu3.add(ManeInscri);
+        jMAdministracion.add(ManeInscri);
 
         ManeNota.setText("Manipulacion de Notas");
         ManeNota.addActionListener(new java.awt.event.ActionListener() {
@@ -98,11 +95,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 ManeNotaActionPerformed(evt);
             }
         });
-        jMenu3.add(ManeNota);
+        jMAdministracion.add(ManeNota);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(jMAdministracion);
 
-        jMenu4.setText("Consultas");
+        jMConsultas.setText("Consultas");
 
         AlumxMate.setText("Alumnos por Materia");
         AlumxMate.addActionListener(new java.awt.event.ActionListener() {
@@ -110,12 +107,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 AlumxMateActionPerformed(evt);
             }
         });
-        jMenu4.add(AlumxMate);
+        jMConsultas.add(AlumxMate);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(jMConsultas);
 
-        jMenu5.setText("Salir");
-        jMenuBar1.add(jMenu5);
+        jMSalir.setText("Salir");
+        jMSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMSalirMouseClicked(evt);
+            }
+        });
+        jMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalirActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,52 +149,74 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void FormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormAlumActionPerformed
         // TODO add your handling code here:
         
+        Escritorio.removeAll();
+        Escritorio.repaint();
         FormularioAlumno verventana = new FormularioAlumno(); 
         Escritorio.add(verventana);
         verventana.show(); 
-        
+        Escritorio.moveToFront(verventana);
         
     }//GEN-LAST:event_FormAlumActionPerformed
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void jMAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAlumnoActionPerformed
         // TODO add your handling code here:   
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_jMAlumnoActionPerformed
 
     private void ManeInscriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManeInscriActionPerformed
         // TODO add your handling code here:
         
+        Escritorio.removeAll();
+        Escritorio.repaint();
         ManejoInscripciones verventana = new ManejoInscripciones();
         Escritorio.add(verventana);
         verventana.show();
+        Escritorio.moveToFront(verventana);
         
     }//GEN-LAST:event_ManeInscriActionPerformed
 
     private void FormMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormMateActionPerformed
         // TODO add your handling code here:
         
+        Escritorio.removeAll();
+        Escritorio.repaint();
         FormularioMateria verventana = new FormularioMateria(); 
         Escritorio.add(verventana);
         verventana.show();
+        Escritorio.moveToFront(verventana);
         
     }//GEN-LAST:event_FormMateActionPerformed
 
     private void ManeNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManeNotaActionPerformed
         // TODO add your handling code here:
         
+        Escritorio.removeAll();
+        Escritorio.repaint();
         ManejoNotas verventana = new ManejoNotas();
         Escritorio.add(verventana);
         verventana.show();
+        Escritorio.moveToFront(verventana);
         
     }//GEN-LAST:event_ManeNotaActionPerformed
 
     private void AlumxMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumxMateActionPerformed
         // TODO add your handling code here:
         
+        Escritorio.removeAll();
+        Escritorio.repaint();
         AlumnosxMateria verventana = new AlumnosxMateria();
         Escritorio.add(verventana);
         verventana.show(); 
+        Escritorio.moveToFront(verventana);
         
     }//GEN-LAST:event_AlumxMateActionPerformed
+
+    private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMSalirActionPerformed
+
+    private void jMSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMSalirMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jMSalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -233,11 +262,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem FormMate;
     private javax.swing.JMenuItem ManeInscri;
     private javax.swing.JMenuItem ManeNota;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMAdministracion;
+    private javax.swing.JMenu jMAlumno;
+    private javax.swing.JMenu jMConsultas;
+    private javax.swing.JMenu jMMateria;
+    private javax.swing.JMenu jMSalir;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

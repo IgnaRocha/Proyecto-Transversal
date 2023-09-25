@@ -5,7 +5,9 @@
  */
 package proyecto.transversal.AccesoADatos;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -22,8 +24,9 @@ public class ConexionLXII {
     private static Connection connection;
     
     private ConexionLXII (){}
-    public static Connection getConexion(){
-        
+    
+    public static Connection getConexion() {
+
         if (connection == null) {
 
             try {

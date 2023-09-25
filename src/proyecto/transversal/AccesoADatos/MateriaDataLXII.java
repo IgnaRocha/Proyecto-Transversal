@@ -20,45 +20,43 @@ import proyecto.transversal.Entidades.MateriaLXII;
  * @author Agente Sosa
  */
 public class MateriaDataLXII {
-    
-     private Connection con = null;
 
-public MateriaLXII guardarMateria (MateriaLXII materia){
-    String sql= "INSERT INTO materia(idMateria, nombre, año, estado) VALUES (5, 'Matematica 1', 1, 1)";
-    PreparedStatement ps = null;
-    
-    try{
-        ps= con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-    
-         ps = con.prepareStatement(sql);
-            ps.setInt(1,materia.getIdMateria());
-            ps.setString(2,materia.getNombre());
-            ps.setInt(3, materia.getAnio());
-            ps.setBoolean(4, materia.isEstado());
-            ps.executeUpdate();
-            
-            
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                materia.setIdMateria (rs.getInt(1)) ;
-                JOptionPane.showMessageDialog (null, "SE AGREGÓ LA MATERIA CORRECTAMENTE");
-                
-            } 
-            ps.close();
-            }catch(SQLException ex){
-                JOptionPane.showMessageDialog(null, "ERROR AL AGREGAR LA MATERIA"+ ex.getMessage());
-                
-            }
-         return materia;
-            
-            }
-    
+    private Connection con = null;
 
- public MateriaLXII buscarMateria(int id){
-    MateriaLXII materia = null;
-        String sql= "SELECT idMateria, nombre, año, estado FROM materia WHERE 1";
+    public MateriaDataLXII() {
+
+        con = ConexionLXII.getConexion();
+    }
+
+    public void guardarMateria(MateriaLXII materia) {
+        String sql = "INSERT INTO materia(nombre, año, estado) VALUES (?,?,?)";
         PreparedStatement ps = null;
-        
+
+        try {
+//            ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, materia.getNombre());
+            ps.setInt(2, materia.getAño());
+            ps.setBoolean(3, materia.isEstado());
+            ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "SE AGREGÓ LA MATERIA CORRECTAMENTE");
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR AL AGREGAR LA MATERIA" + ex.getMessage());
+
+        }
+
+    }
+    
+
+    public MateriaLXII buscarMateria(int id) {
+        String sql = "SELECT idMateria, nombre, año, estado FROM materia WHERE idMateria = ? AND estado = 1";
+        MateriaLXII materia = null;
+        PreparedStatement ps = null;
+
         try{
             
             ps = con.prepareStatement(sql);
@@ -68,7 +66,7 @@ public MateriaLXII guardarMateria (MateriaLXII materia){
                 materia = new MateriaLXII();
                 materia.setIdMateria(id);
                 materia.setNombre(rs.getString("nombre"));
-                materia.setAnio(rs.getInt("anio"));
+                materia.setAño(rs.getInt("año"));
                 materia.setEstado(rs.getBoolean("estado"));
                 
                 
@@ -138,17 +136,15 @@ public void modificarMateria (MateriaLXII materia){
            List<MateriaLXII> areas = new ArrayList<>();
            
            try{
-               String sql = "SELECT idMateria, nombre, año, activo FROM materia WHERE 1";
+               String sql = "SELECT idMateria, nombre, año, estado FROM materia WHERE estado = 1";
                PreparedStatement ps = con.prepareStatement(sql);
                ResultSet rs = ps.executeQuery();
                while (rs.next()){
                    MateriaLXII materia = new MateriaLXII();
-                   
                    materia.setIdMateria(rs.getInt("idMateria"));
                    materia.setNombre (rs.getString("nombre"));
-                   materia.setAnio(rs.getInt("anio"));
+                   materia.setAño(rs.getInt("año"));
                    materia.setEstado(rs.getBoolean("estado"));
-                   
                    areas.add(materia);
                    
                }

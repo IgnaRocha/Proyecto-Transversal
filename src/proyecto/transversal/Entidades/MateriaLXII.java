@@ -9,25 +9,25 @@ package proyecto.transversal.Entidades;
  *
  * @author Kelly
  */
-public class MateriaLXII {
+    public class MateriaLXII {
     private int idMateria;
     private String nombre;
-    private int anio;
+    private int año;
     private boolean estado;
 
     public MateriaLXII() {
     }
 
-    public MateriaLXII(int idMateria, String nombre, int anio, boolean estado) {
+    public MateriaLXII(int idMateria, String nombre, int año, boolean estado) {
         this.idMateria = idMateria;
         this.nombre = nombre;
-        this.anio = anio;
+        this.año = año;
         this.estado = estado;
     }
 
-    public MateriaLXII(String nombre, int anio, boolean estado) {
+    public MateriaLXII(String nombre, int año, boolean estado) {
         this.nombre = nombre;
-        this.anio = anio;
+        this.año = año;
         this.estado = estado;
     }
 
@@ -47,12 +47,12 @@ public class MateriaLXII {
         this.nombre = nombre;
     }
 
-    public int getAnio() {
-        return anio;
+    public int getAño() {
+        return año;
     }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
+    public void setAño(int anio) {
+        this.año = año;
     }
 
     public boolean isEstado() {
@@ -65,7 +65,7 @@ public class MateriaLXII {
 
     @Override
     public String toString() {
-        return "Materia{" + "idMateria=" + idMateria + ", nombre=" + nombre + ", anio=" + anio + '}';
+        return nombre + " " + año;
     }
     
     
