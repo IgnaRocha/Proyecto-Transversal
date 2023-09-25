@@ -146,7 +146,7 @@ public class AlumnosxMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jcbMateriasActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
 

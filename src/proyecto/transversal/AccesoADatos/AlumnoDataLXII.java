@@ -179,7 +179,7 @@ public class AlumnoDataLXII {
         }
     }
 
-    public void eliminiarAlumno(int id) {
+    public void eliminarAlumno(int id) {
 
         try {
             String sql = "UPDATE alumno SET estado= 0 WHERE idAlumno = ? ";
